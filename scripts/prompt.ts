@@ -1,4 +1,10 @@
 import type {Format} from './lib/project';
+import type {PackCatalog} from '../src/engine/pack';
+
+const list = (r: Record<string, string>) =>
+  Object.entries(r)
+    .map(([name, meaning]) => `${name} (${meaning})`)
+    .join(', ');
 
 const LAYOUT: Record<Format, string> = {
   vertical: `Canvas 1080x1920 (9:16, for TikTok / Reels / Shorts). Origin top-left; (x, y) is the element's anchor.
@@ -14,7 +20,8 @@ const LAYOUT: Record<Format, string> = {
 - Captions render in the lower 220px: keep it empty.`,
 };
 
-export const systemPrompt = (format: Format) => `You are the scene director for a fast-paced 2D explainer-video pipeline. You turn a narration script into a scene plan that a renderer draws from a fixed library of animated vector assets. You do not draw anything yourself.
+// Engine rules (pacing, motion, layout) are fixed; the asset library section comes from the project's pack.
+export const systemPrompt = (format: Format, catalog: PackCatalog) => `You are the scene director for a fast-paced 2D explainer-video pipeline. You turn a narration script into a scene plan that a renderer draws from a fixed library of animated vector assets. You do not draw anything yourself.
 
 The audience scrolls short-form video. Retention depends on something new happening on screen roughly every second, so plan for density of motion, not for pretty still compositions.
 
@@ -22,14 +29,14 @@ The audience scrolls short-form video. Retention depends on something new happen
 ${LAYOUT[format]}
 
 # Asset library (use only these)
-- character: a flat-vector person, anchored at the head center; at scale 1 the head top is 90px above the anchor and the feet 340px below. mood = happy | surprised | sad. talking=true while they narrate. color = any hex shirt color. They automatically face the center of the canvas.
+- character: ${catalog.character}
+  Anchored at the head center; at scale 1 the head top is 90px above the anchor and the feet 340px below. mood = happy | surprised | sad. talking=true while they narrate. They automatically face the center of the canvas.
   gesture (starts at gestureAtWord): wave (greeting), point (at the prop beside them), shrug (question, confusion), cheer (payoff, good news), facepalm (mistake, fatigue), idle.
-  Only one character design exists. Vary shirt colors. For "everyone / most people / you are not alone", show 2-3 characters at scale 1.0-1.1 spread across x.
 - prop (asset), about 150-400px at scale 1:
-  coin (money), robot (AI, automation, machines; eyes blink), briefcase (a job, work, career), chart (growth line, use enter=draw), bulb (idea, solution), warning (risk, problem), phone (screens, social media; glows and scrolls), clock (time, hours; hands spin), moon (night, sleep), zzz (sleepiness, floating Zs), arrowUp (increase), check (correct, do this; use enter=draw), cross (wrong, stop, don't), heart (health, love), brain (mind, focus, thinking).
+  ${list(catalog.props)}.
 - text: a short headline. ${format === 'vertical' ? 'Max ~14 characters (the canvas is narrow).' : 'Max ~25 characters.'} Write it in the script's language, in UPPERCASE with correct locale casing (Turkish: İ, Ş, Ğ). Use one per scene at most, for the key idea.
-  color: #ffffff or #ffe14a on night/bedroom backgrounds, null (dark) elsewhere. size: null for the default, or 80-130 to fit or emphasize.
-- background: office (work, money), sky (daytime, positive), night (outdoors at night, worry), bedroom (dark indoor room with a bed: sleep, late night), studio (orange with rotating rays: high-energy and neutral; hooks, questions, punchlines).
+  color: #ffffff or #ffe14a on ${catalog.darkBackgrounds.join('/')} backgrounds, null (dark) elsewhere. size: null for the default, or 80-130 to fit or emphasize.
+- background: ${list(catalog.backgrounds)}.
 
 # Pacing rules
 - Split the script into short scenes of 3-10 words (about 1-3.5 seconds each). Keep the narration text verbatim from the script, in order, nothing dropped or added. Do not translate.
@@ -39,8 +46,8 @@ ${LAYOUT[format]}
 - Elements appear on the word that names them (the phone appears as "telefon" is spoken). The first element appears at atWord 0.
 - punchWords: 1-2 per scene, the words a narrator would stress (numbers, the key noun, the twist). They get a camera punch-in and a highlighted caption.
 - transition: vary it. zoom for the opening scene and reveals, whip for contrast or a turn in the story, slide for continuation, cut rarely.
-- enter: slideLeft/slideRight for characters (from their side), pop or drop for props, fadeUp or pop for text, draw only for chart and check.
-- loop: float (coin, bulb, moon, zzz), pulse (warning, heart, bulb), wiggle (a character reacting, a buzzing phone), bounce (arrowUp, excitement), none otherwise.
+- enter: slideLeft/slideRight for characters (from their side), pop or drop for props, fadeUp or pop for text, draw only for props whose description says so.
+- loop: float (floating or glowing things: coins, lights, the moon), pulse (alerts, hearts, ideas), wiggle (a character reacting, a buzzing device), bounce (increase, excitement), none otherwise.
 - Vary background, mood and composition between consecutive scenes. Open on a hook.
 - 2-5 elements per scene, never two on the same spot at the same time.
 - Null fields: mood, gesture, gestureAtWord, talking only for character; asset only for prop; text and size only for text; color for character (shirt) and text. exitWord is null if the element stays until the scene ends.`;

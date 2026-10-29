@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import type {Gesture, Mood} from '../catalog';
+import type {Gesture} from '../../engine/motion';
+import type {CharacterProps} from '../../engine/pack';
 
 // Arm angles in degrees; 0 = hanging straight down, negative swings the right arm outward/up.
 // The left arm mirrors with positive angles.
@@ -23,14 +24,7 @@ const Arm: React.FC<{x: number; angle: number; color: string}> = ({x, angle, col
   </g>
 );
 
-export const Character: React.FC<{
-  mood: Mood;
-  talking?: boolean;
-  color?: string;
-  gesture?: Gesture;
-  gestureT?: number; // seconds since the gesture started; negative = not started
-  flip?: boolean;
-}> = ({mood, talking, color = '#ff8a5c', gesture = 'idle', gestureT = -1, flip = false}) => {
+export const Character: React.FC<CharacterProps> = ({mood, talking, color = '#ff8a5c', gesture = 'idle', gestureT = -1, flip = false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;

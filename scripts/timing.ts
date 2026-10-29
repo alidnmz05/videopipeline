@@ -1,4 +1,4 @@
-import type {Word} from '../src/types';
+import type {Word} from '../src/engine/types';
 
 // Placeholder timing until real TTS + forced alignment replaces it.
 // Roughly 3 words/sec for Turkish narration, with longer pauses at punctuation.

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
-import type {Scene, SceneElement, Story} from '../src/types';
+import type {Scene, SceneElement, Story} from '../src/engine/types';
 import {estimateWords} from './timing';
-import {StoryPlanSchema, type StoryPlan} from './schema';
+import {planSchema, type StoryPlan} from './schema';
 import {CANVAS, loadProject, parseCli, runCli, writeJson} from './lib/project';
 
 // Step 2 of 3: plan.json -> story.json. Deterministic and free; rerun after editing a plan.
@@ -77,12 +77,18 @@ const density = (s: Scene) => {
 
 runCli(() => {
   const {slug} = parseCli(process.argv.slice(2), 'npm run build -- <project>');
-  const {paths, config} = loadProject(slug);
+  const {paths, config, catalog} = loadProject(slug);
   if (!fs.existsSync(paths.plan)) throw new Error(`${paths.plan} not found. Create it with: npm run plan -- ${slug}`);
-  const plan = StoryPlanSchema.parse(JSON.parse(fs.readFileSync(paths.plan, 'utf8')));
+  // Validating against the pack's schema catches assets the pack cannot draw.
+  const parsed = planSchema(catalog).safeParse(JSON.parse(fs.readFileSync(paths.plan, 'utf8')));
+  if (!parsed.success) {
+    const issues = parsed.error.issues.map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n');
+    throw new Error(`${paths.plan} does not fit pack "${config.pack}":\n${issues}`);
+  }
+  const plan = parsed.data;
   const {w: W, h: H} = CANVAS[config.format];
 
-  const story: Story = {fps: 30, width: W, height: H, scenes: plan.scenes.map((s, i) => toScene(s, i, W, H))};
+  const story: Story = {fps: 30, width: W, height: H, pack: config.pack, scenes: plan.scenes.map((s, i) => toScene(s, i, W, H))};
   writeJson(paths.story, story);
 
   const total = story.scenes.reduce((a, s) => a + s.duration, 0);

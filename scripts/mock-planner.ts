@@ -1,15 +1,17 @@
 import type {StoryPlan} from './schema';
 import {CANVAS, type Format} from './lib/project';
-import type {Gesture, Transition} from '../src/catalog';
+import type {Gesture, Transition} from '../src/engine/motion';
+import type {PackCatalog} from '../src/engine/pack';
 
 type PlanScene = StoryPlan['scenes'][number];
 type PlanElement = PlanScene['elements'][number];
 
 // Offline stand-in for the LLM call: same output shape (StoryPlan), heuristic decisions.
-// Used to exercise the whole pipeline without an API key.
+// Used to exercise the whole pipeline without an API key. Its keyword table speaks
+// flat-basic asset names; entries a pack does not have are skipped.
 
 const MAX_WORDS = 8;
-const BACKGROUNDS: PlanScene['background'][] = ['studio', 'office', 'sky', 'bedroom'];
+const BACKGROUNDS = ['studio', 'office', 'sky', 'bedroom'];
 const TRANSITIONS: Transition[] = ['zoom', 'slide', 'whip', 'slide'];
 const GESTURES: Gesture[] = ['point', 'shrug', 'wave', 'cheer'];
 
@@ -43,14 +45,17 @@ const el = (p: Partial<PlanElement> & Pick<PlanElement, 'type' | 'x' | 'y' | 'at
   scale: 1, exitWord: null, enter: 'pop', loop: 'none', ...p,
 });
 
-export const mockPlan = (script: string, format: Format): StoryPlan => {
+export const mockPlan = (script: string, format: Format, catalog: PackCatalog): StoryPlan => {
   const {w} = CANVAS[format];
   const vertical = format === 'vertical';
+  const props = PROPS.filter((p) => p.asset in catalog.props);
+  const known = BACKGROUNDS.filter((b) => b in catalog.backgrounds);
+  const backgrounds = known.length > 0 ? known : Object.keys(catalog.backgrounds);
   const scenes = splitScenes(script).map((narration, i): PlanScene => {
     const words = narration.split(/\s+/);
     const left = i % 2 === 0;
-    const background = BACKGROUNDS[i % BACKGROUNDS.length];
-    const dark = background === 'bedroom' || background === 'night';
+    const background = backgrounds[i % backgrounds.length];
+    const dark = catalog.darkBackgrounds.includes(background);
     const charX = vertical ? (left ? 300 : 780) : left ? 520 : 1400;
     const propX = vertical ? (left ? 780 : 300) : left ? 1300 : 560;
     const charY = vertical ? 860 : 520;
@@ -64,7 +69,7 @@ export const mockPlan = (script: string, format: Format): StoryPlan => {
       }),
     ];
     // Up to two keyword props, swapped in place so the frame keeps changing.
-    const hits = PROPS.map((p) => ({p, at: words.findIndex((wd) => p.re.test(wd))})).filter((x) => x.at >= 0).sort((a, b) => a.at - b.at).slice(0, 2);
+    const hits = props.map((p) => ({p, at: words.findIndex((wd) => p.re.test(wd))})).filter((x) => x.at >= 0).sort((a, b) => a.at - b.at).slice(0, 2);
     hits.forEach(({p, at}, k) => {
       const next = hits[k + 1];
       elements.push(el({

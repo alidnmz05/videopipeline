@@ -1,5 +1,4 @@
 import React, {useId} from 'react';
-import type {PropAsset} from '../catalog';
 
 const INK = '#3b3b58';
 
@@ -17,7 +16,8 @@ const Moon: React.FC = () => {
 };
 
 // `t` is scene time in seconds, for props with built-in motion (clock hands, phone glow, zzz).
-export const Prop: React.FC<{asset: PropAsset; draw: number; t: number}> = ({asset, draw, t}) => {
+// Names must match catalog.ts; build validates plans against the catalog.
+export const Prop: React.FC<{asset: string; draw: number; t: number}> = ({asset, draw, t}) => {
   switch (asset) {
     case 'coin':
       return (
@@ -145,5 +145,7 @@ export const Prop: React.FC<{asset: PropAsset; draw: number; t: number}> = ({ass
           <rect x={-22} y={-20} width={44} height={30} rx={6} fill="#ffcf3f" stroke={INK} strokeWidth={5} />
         </g>
       );
+    default:
+      return null;
   }
 };

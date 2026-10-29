@@ -1,7 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {projects} from './projects.generated';
-import {Story, totalFrames} from './Story';
+import {Story, totalFrames} from './engine/Story';
 
 // One composition per project folder that has a story.json; the composition id is the project name.
 export const Root: React.FC = () => (

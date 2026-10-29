@@ -1,10 +1,8 @@
 import React from 'react';
 import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import type {Scene, SceneElement} from '../types';
-import {enterAnim, exitAnim, loopAnim} from '../anim';
-import {Background} from '../assets/Background';
-import {Character} from '../assets/Character';
-import {Prop} from '../assets/Props';
+import type {Scene, SceneElement} from './types';
+import type {Pack} from './pack';
+import {enterAnim, exitAnim, loopAnim} from './anim';
 import {Captions} from './Captions';
 
 const TRANSITION_FRAMES = 8;
@@ -16,7 +14,8 @@ const isLight = (hex: string) => {
   return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255) > 150;
 };
 
-const Element: React.FC<{el: SceneElement; canvasW: number; vertical: boolean}> = ({el, canvasW, vertical}) => {
+const Element: React.FC<{el: SceneElement; pack: Pack; canvasW: number; vertical: boolean}> = ({el, pack, canvasW, vertical}) => {
+  const {Character, Prop} = pack;
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -57,7 +56,8 @@ const Element: React.FC<{el: SceneElement; canvasW: number; vertical: boolean}> 
   );
 };
 
-export const SceneView: React.FC<{scene: Scene}> = ({scene}) => {
+export const SceneView: React.FC<{scene: Scene; pack: Pack}> = ({scene, pack}) => {
+  const {Background} = pack;
   const frame = useCurrentFrame();
   const {fps, width: W, height: H} = useVideoConfig();
   const t = frame / fps;
@@ -96,7 +96,7 @@ export const SceneView: React.FC<{scene: Scene}> = ({scene}) => {
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
           <g transform={`translate(${sx} ${sy}) translate(${ox} ${oy}) scale(${zoom}) translate(${-ox} ${-oy})`}>
             <Background kind={scene.background} w={W} h={H} t={t} />
-            {scene.elements.map((el, i) => <Element key={i} el={el} canvasW={W} vertical={vertical} />)}
+            {scene.elements.map((el, i) => <Element key={i} el={el} pack={pack} canvasW={W} vertical={vertical} />)}
           </g>
         </svg>
       </AbsoluteFill>

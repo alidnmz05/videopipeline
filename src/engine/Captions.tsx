@@ -1,6 +1,6 @@
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import type {Word} from '../types';
+import type {Word} from './types';
 
 // Short-form style: 3 words at a time, each pops in as it is spoken; punch words go green.
 // Unspoken words in the group are laid out but invisible, so the line never reflows.

@@ -1,8 +1,8 @@
 import React from 'react';
-import type {Background as Kind} from '../catalog';
 
 // Every background has some ambient motion so no frame is ever fully static.
-export const Background: React.FC<{kind: Kind; w: number; h: number; t: number}> = ({kind, w, h, t}) => {
+// Names must match catalog.ts; anything else falls through to sky.
+export const Background: React.FC<{kind: string; w: number; h: number; t: number}> = ({kind, w, h, t}) => {
   const vertical = h > w;
   const floorY = vertical ? h * 0.68 : h * 0.76;
   // In vertical the headline sits at y 330-430, so wall decor moves below it.

@@ -1,4 +1,4 @@
-import type {AnimName, Background, Gesture, LoopName, Mood, PropAsset, Transition} from './catalog';
+import type {AnimName, Gesture, LoopName, Mood, Transition} from './motion';
 
 export type {AnimName, LoopName};
 
@@ -12,9 +12,10 @@ export type ElementBase = {
   loop?: LoopName;
 };
 
+// `asset` and `background` are names from the story's pack catalog.
 export type SceneElement =
   | (ElementBase & {type: 'character'; mood: Mood; talking?: boolean; color?: string; gesture?: Gesture; gestureAt?: number; facing?: 'left' | 'right'})
-  | (ElementBase & {type: 'prop'; asset: PropAsset})
+  | (ElementBase & {type: 'prop'; asset: string})
   | (ElementBase & {type: 'text'; text: string; size?: number; color?: string});
 
 export type Word = {w: string; start: number; end: number; emph?: boolean};
@@ -22,7 +23,7 @@ export type Word = {w: string; start: number; end: number; emph?: boolean};
 export type Scene = {
   id: string;
   duration: number; // seconds
-  background: Background;
+  background: string;
   transition?: Transition;
   camera?: {from: number; to: number; originX?: number; originY?: number};
   punches?: number[]; // seconds: camera punch-in + shake
@@ -34,5 +35,6 @@ export type Story = {
   fps: number;
   width: number;
   height: number;
+  pack: string;
   scenes: Scene[];
 };

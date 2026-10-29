@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {getCatalog} from '../../src/packs/catalogs';
+import type {PackCatalog} from '../../src/engine/pack';
 
 export type Format = 'vertical' | 'horizontal';
 
@@ -19,6 +21,7 @@ export type Project = {
   slug: string;
   dir: string;
   config: ProjectConfig;
+  catalog: PackCatalog;
   paths: {config: string; script: string; plan: string; story: string; video: string};
 };
 
@@ -47,7 +50,7 @@ export const loadProject = (slug: string): Project => {
   const raw = JSON.parse(fs.readFileSync(paths.config, 'utf8'));
   if (raw.format !== 'vertical' && raw.format !== 'horizontal') throw new Error(`${paths.config}: format must be "vertical" or "horizontal"`);
   if (typeof raw.pack !== 'string' || !raw.pack) throw new Error(`${paths.config}: pack is required`);
-  return {slug, dir, config: {format: raw.format, pack: raw.pack}, paths};
+  return {slug, dir, config: {format: raw.format, pack: raw.pack}, catalog: getCatalog(raw.pack), paths};
 };
 
 // Splits CLI args into the project slug (first positional) and flags.

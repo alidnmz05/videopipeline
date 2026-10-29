@@ -1,0 +1,46 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    {
+      "id": "s1",
+      "duration": 4,
+      "background": "office",
+      "camera": {"from": 1, "to": 1.1, "originX": 0.3, "originY": 0.5},
+      "elements": [
+        {"type": "character", "x": 600, "y": 520, "scale": 1.6, "mood": "surprised", "talking": true, "at": 0.1, "enter": "slideLeft"},
+        {"type": "prop", "asset": "coin", "x": 1250, "y": 420, "at": 1.2, "enter": "pop", "loop": "float"},
+        {"type": "text", "text": "Para nereye gidiyor?", "x": 960, "y": 230, "at": 0.4, "enter": "fadeUp"}
+      ],
+      "words": [
+        {"w": "Maaşın", "start": 0.2, "end": 0.7},
+        {"w": "her", "start": 0.7, "end": 0.95},
+        {"w": "ay", "start": 0.95, "end": 1.2},
+        {"w": "nereye", "start": 1.4, "end": 1.9},
+        {"w": "gidiyor", "start": 1.9, "end": 2.5},
+        {"w": "hiç", "start": 2.7, "end": 3.0},
+        {"w": "düşündün", "start": 3.0, "end": 3.8}
+      ]
+    },
+    {
+      "id": "s2",
+      "duration": 4,
+      "background": "sky",
+      "elements": [
+        {"type": "character", "x": 450, "y": 520, "scale": 1.6, "mood": "happy", "talking": true, "color": "#5c9bff", "at": 0.1, "enter": "slideRight"},
+        {"type": "prop", "asset": "chart", "x": 1250, "y": 460, "scale": 1.5, "at": 0.8, "enter": "draw"},
+        {"type": "prop", "asset": "bulb", "x": 1620, "y": 200, "at": 2.2, "enter": "pop", "loop": "pulse"}
+      ],
+      "words": [
+        {"w": "Küçük", "start": 0.2, "end": 0.6},
+        {"w": "alışkanlıklar", "start": 0.6, "end": 1.4},
+        {"w": "zamanla", "start": 1.6, "end": 2.1},
+        {"w": "büyür", "start": 2.1, "end": 2.7},
+        {"w": "ve", "start": 2.8, "end": 3.0},
+        {"w": "fark", "start": 3.0, "end": 3.4},
+        {"w": "yaratır", "start": 3.4, "end": 3.9}
+      ]
+    }
+  ]
+}

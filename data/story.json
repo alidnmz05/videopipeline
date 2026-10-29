@@ -1,0 +1,1086 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "duration": 3.2,
+      "background": "bedroom",
+      "transition": "zoom",
+      "punches": [
+        1.58,
+        2.26
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "shrug",
+          "gestureAt": 2.26
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.25,
+          "exitAt": 1.58,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "07:00",
+          "color": "#ffffff",
+          "size": 130
+        },
+        {
+          "x": 800,
+          "y": 620,
+          "scale": 0.7,
+          "at": 0.53,
+          "exitAt": 1.58,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "clock"
+        },
+        {
+          "x": 790,
+          "y": 820,
+          "scale": 0.9,
+          "at": 1.58,
+          "exitAt": 2.26,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "briefcase"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 2.26,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "İŞ YOK!",
+          "color": "#ffe14a",
+          "size": 120
+        },
+        {
+          "x": 790,
+          "y": 820,
+          "scale": 0.9,
+          "at": 2.26,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "cross"
+        }
+      ],
+      "words": [
+        {
+          "w": "Bir",
+          "start": 0.25,
+          "end": 0.49
+        },
+        {
+          "w": "sabah",
+          "start": 0.53,
+          "end": 0.85
+        },
+        {
+          "w": "uyandın",
+          "start": 0.89,
+          "end": 1.31
+        },
+        {
+          "w": "ve",
+          "start": 1.35,
+          "end": 1.54
+        },
+        {
+          "w": "işin",
+          "start": 1.58,
+          "end": 1.86,
+          "emph": true
+        },
+        {
+          "w": "artık",
+          "start": 1.9,
+          "end": 2.22
+        },
+        {
+          "w": "yok",
+          "start": 2.26,
+          "end": 2.49,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "duration": 3.06,
+      "background": "office",
+      "transition": "whip",
+      "punches": [
+        1.25
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "point",
+          "gestureAt": 1.62
+        },
+        {
+          "x": 780,
+          "y": 820,
+          "scale": 0.9,
+          "at": 0.62,
+          "exitAt": 1.25,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "briefcase"
+        },
+        {
+          "x": 780,
+          "y": 800,
+          "scale": 1.1,
+          "at": 1.25,
+          "enter": "drop",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "robot"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.62,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "YAPAY ZEKA"
+        }
+      ],
+      "words": [
+        {
+          "w": "Senin",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "işini",
+          "start": 0.62,
+          "end": 0.94
+        },
+        {
+          "w": "bir",
+          "start": 0.98,
+          "end": 1.22
+        },
+        {
+          "w": "yapay",
+          "start": 1.25,
+          "end": 1.58,
+          "emph": true
+        },
+        {
+          "w": "zeka",
+          "start": 1.62,
+          "end": 1.9
+        },
+        {
+          "w": "yapıyor",
+          "start": 1.94,
+          "end": 2.36
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "duration": 2.66,
+      "background": "studio",
+      "transition": "slide",
+      "punches": [
+        1.5
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 880,
+          "scale": 1.1,
+          "at": 0.25,
+          "enter": "drop",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "shrug",
+          "gestureAt": 1.5
+        },
+        {
+          "x": 210,
+          "y": 900,
+          "scale": 1,
+          "at": 1.5,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": false,
+          "color": "#ff8a5c",
+          "gesture": "facepalm",
+          "gestureAt": 1.5
+        },
+        {
+          "x": 870,
+          "y": 900,
+          "scale": 1,
+          "at": 1.5,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": false,
+          "color": "#8a6cff",
+          "gesture": "shrug",
+          "gestureAt": 1.5
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.5,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "HERKESİN",
+          "size": 120
+        }
+      ],
+      "words": [
+        {
+          "w": "Sadece",
+          "start": 0.25,
+          "end": 0.62
+        },
+        {
+          "w": "senin",
+          "start": 0.66,
+          "end": 0.98
+        },
+        {
+          "w": "değil",
+          "start": 1.02,
+          "end": 1.35
+        },
+        {
+          "w": "herkesin",
+          "start": 1.5,
+          "end": 1.96,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "duration": 2.24,
+      "background": "studio",
+      "transition": "zoom",
+      "punches": [
+        0.57
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 900,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideUp",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": true,
+          "color": "#8a6cff",
+          "gesture": "shrug",
+          "gestureAt": 0.89
+        },
+        {
+          "x": 540,
+          "y": 540,
+          "scale": 1.1,
+          "at": 0.57,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        }
+      ],
+      "words": [
+        {
+          "w": "Peki",
+          "start": 0.25,
+          "end": 0.53
+        },
+        {
+          "w": "para",
+          "start": 0.57,
+          "end": 0.85,
+          "emph": true
+        },
+        {
+          "w": "kimde",
+          "start": 0.89,
+          "end": 1.22
+        },
+        {
+          "w": "olur",
+          "start": 1.26,
+          "end": 1.54
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "duration": 2.83,
+      "background": "office",
+      "transition": "slide",
+      "punches": [
+        1.48,
+        1.8
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 800,
+          "scale": 1.1,
+          "at": 0.25,
+          "enter": "drop",
+          "loop": "bounce",
+          "type": "prop",
+          "asset": "robot"
+        },
+        {
+          "x": 790,
+          "y": 780,
+          "scale": 1.1,
+          "at": 1.48,
+          "exitAt": 1.8,
+          "enter": "pop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        },
+        {
+          "x": 790,
+          "y": 780,
+          "scale": 1,
+          "at": 1.8,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "cross"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.8,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "0 TL",
+          "size": 130
+        }
+      ],
+      "words": [
+        {
+          "w": "Robotlar",
+          "start": 0.25,
+          "end": 0.71
+        },
+        {
+          "w": "çalışır",
+          "start": 0.75,
+          "end": 1.17
+        },
+        {
+          "w": "ama",
+          "start": 1.21,
+          "end": 1.44
+        },
+        {
+          "w": "maaş",
+          "start": 1.48,
+          "end": 1.76,
+          "emph": true
+        },
+        {
+          "w": "almaz",
+          "start": 1.8,
+          "end": 2.13,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "duration": 3.53,
+      "background": "night",
+      "transition": "whip",
+      "punches": [
+        1.87
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": true,
+          "color": "#ff8a5c",
+          "gesture": "shrug",
+          "gestureAt": 2.41
+        },
+        {
+          "x": 790,
+          "y": 780,
+          "scale": 1,
+          "at": 0.62,
+          "exitAt": 1.5,
+          "enter": "pop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        },
+        {
+          "x": 790,
+          "y": 780,
+          "scale": 1.1,
+          "at": 1.87,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "warning"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.87,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "ALIŞVERİŞ YOK",
+          "color": "#ffffff",
+          "size": 84
+        }
+      ],
+      "words": [
+        {
+          "w": "Kimse",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "maaş",
+          "start": 0.62,
+          "end": 0.9
+        },
+        {
+          "w": "almazsa",
+          "start": 0.94,
+          "end": 1.35
+        },
+        {
+          "w": "kimse",
+          "start": 1.5,
+          "end": 1.83
+        },
+        {
+          "w": "alışveriş",
+          "start": 1.87,
+          "end": 2.37,
+          "emph": true
+        },
+        {
+          "w": "yapamaz",
+          "start": 2.41,
+          "end": 2.83
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "duration": 2.64,
+      "background": "office",
+      "transition": "slide",
+      "punches": [
+        1.03
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 800,
+          "scale": 1,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "robot"
+        },
+        {
+          "x": 790,
+          "y": 800,
+          "scale": 1,
+          "at": 0.8,
+          "exitAt": 1.03,
+          "enter": "drop",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "robot"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.62,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "MÜŞTERİ: 0"
+        },
+        {
+          "x": 790,
+          "y": 800,
+          "scale": 1.1,
+          "at": 1.03,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "warning"
+        }
+      ],
+      "words": [
+        {
+          "w": "Şirketler",
+          "start": 0.25,
+          "end": 0.76
+        },
+        {
+          "w": "de",
+          "start": 0.8,
+          "end": 0.99
+        },
+        {
+          "w": "müşterisiz",
+          "start": 1.03,
+          "end": 1.58,
+          "emph": true
+        },
+        {
+          "w": "kalır",
+          "start": 1.62,
+          "end": 1.94
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "duration": 4.05,
+      "background": "sky",
+      "transition": "whip",
+      "punches": [
+        1.67,
+        2.03
+      ],
+      "elements": [
+        {
+          "x": 780,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#8a6cff",
+          "gesture": "point",
+          "gestureAt": 1.67
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.89,
+          "exitAt": 1.67,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "BAZI ÜLKELER"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.67,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "TEMEL GELİR"
+        },
+        {
+          "x": 300,
+          "y": 800,
+          "scale": 1,
+          "at": 2.03,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        },
+        {
+          "x": 300,
+          "y": 580,
+          "scale": 0.8,
+          "at": 2.85,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "bulb"
+        }
+      ],
+      "words": [
+        {
+          "w": "Bu",
+          "start": 0.25,
+          "end": 0.44
+        },
+        {
+          "w": "yüzden",
+          "start": 0.48,
+          "end": 0.85
+        },
+        {
+          "w": "bazı",
+          "start": 0.89,
+          "end": 1.17
+        },
+        {
+          "w": "ülkeler",
+          "start": 1.21,
+          "end": 1.63
+        },
+        {
+          "w": "temel",
+          "start": 1.67,
+          "end": 1.99,
+          "emph": true
+        },
+        {
+          "w": "gelir",
+          "start": 2.03,
+          "end": 2.35,
+          "emph": true
+        },
+        {
+          "w": "fikrini",
+          "start": 2.39,
+          "end": 2.81
+        },
+        {
+          "w": "konuşuyor",
+          "start": 2.85,
+          "end": 3.35
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "duration": 3.38,
+      "background": "studio",
+      "transition": "slide",
+      "punches": [
+        0.25,
+        2.4
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 900,
+          "scale": 1,
+          "at": 0.25,
+          "enter": "drop",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "cheer",
+          "gestureAt": 2.4
+        },
+        {
+          "x": 210,
+          "y": 920,
+          "scale": 0.95,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": false,
+          "color": "#ff8a5c",
+          "gesture": "cheer",
+          "gestureAt": 2.4
+        },
+        {
+          "x": 870,
+          "y": 920,
+          "scale": 0.95,
+          "at": 0.25,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": false,
+          "color": "#8a6cff",
+          "gesture": "cheer",
+          "gestureAt": 2.4
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.71,
+          "exitAt": 1.21,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "HER AY"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.21,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "DEVLETTEN"
+        },
+        {
+          "x": 210,
+          "y": 600,
+          "scale": 0.6,
+          "at": 2.4,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        },
+        {
+          "x": 540,
+          "y": 580,
+          "scale": 0.6,
+          "at": 2.4,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        },
+        {
+          "x": 870,
+          "y": 600,
+          "scale": 0.6,
+          "at": 2.4,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "coin"
+        }
+      ],
+      "words": [
+        {
+          "w": "Herkese",
+          "start": 0.25,
+          "end": 0.67,
+          "emph": true
+        },
+        {
+          "w": "her",
+          "start": 0.71,
+          "end": 0.94
+        },
+        {
+          "w": "ay",
+          "start": 0.98,
+          "end": 1.17
+        },
+        {
+          "w": "devletten",
+          "start": 1.21,
+          "end": 1.72
+        },
+        {
+          "w": "sabit",
+          "start": 1.76,
+          "end": 2.08
+        },
+        {
+          "w": "bir",
+          "start": 2.12,
+          "end": 2.36
+        },
+        {
+          "w": "para",
+          "start": 2.4,
+          "end": 2.68,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "duration": 3.85,
+      "background": "sky",
+      "transition": "zoom",
+      "punches": [
+        1.51,
+        2.46
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "point",
+          "gestureAt": 1.17
+        },
+        {
+          "x": 790,
+          "y": 840,
+          "scale": 0.9,
+          "at": 1.17,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "briefcase"
+        },
+        {
+          "x": 850,
+          "y": 690,
+          "scale": 0.55,
+          "at": 2.09,
+          "exitAt": 2.46,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "cross"
+        },
+        {
+          "x": 850,
+          "y": 690,
+          "scale": 0.55,
+          "at": 2.46,
+          "enter": "draw",
+          "loop": "none",
+          "type": "prop",
+          "asset": "check"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 2.46,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "TERCİH",
+          "size": 120
+        }
+      ],
+      "words": [
+        {
+          "w": "Belki",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "o",
+          "start": 0.62,
+          "end": 0.76
+        },
+        {
+          "w": "zaman",
+          "start": 0.8,
+          "end": 1.13
+        },
+        {
+          "w": "iş",
+          "start": 1.17,
+          "end": 1.36
+        },
+        {
+          "w": "zorunluluk",
+          "start": 1.51,
+          "end": 2.05,
+          "emph": true
+        },
+        {
+          "w": "değil",
+          "start": 2.09,
+          "end": 2.42
+        },
+        {
+          "w": "tercih",
+          "start": 2.46,
+          "end": 2.83,
+          "emph": true
+        },
+        {
+          "w": "olur",
+          "start": 2.87,
+          "end": 3.15
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "duration": 3.49,
+      "background": "studio",
+      "transition": "zoom",
+      "punches": [
+        1.28,
+        2.33
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 900,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideUp",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": true,
+          "color": "#8a6cff",
+          "gesture": "shrug",
+          "gestureAt": 2.1
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.25,
+          "exitAt": 1.28,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "ASIL SORU"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.28,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "BOŞ ZAMAN?",
+          "size": 110
+        },
+        {
+          "x": 220,
+          "y": 620,
+          "scale": 0.7,
+          "at": 1.56,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "clock"
+        },
+        {
+          "x": 860,
+          "y": 620,
+          "scale": 0.7,
+          "at": 2.33,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "heart"
+        }
+      ],
+      "words": [
+        {
+          "w": "Asıl",
+          "start": 0.25,
+          "end": 0.53
+        },
+        {
+          "w": "soru",
+          "start": 0.57,
+          "end": 0.85
+        },
+        {
+          "w": "şu",
+          "start": 0.89,
+          "end": 1.08
+        },
+        {
+          "w": "boş",
+          "start": 1.28,
+          "end": 1.52,
+          "emph": true
+        },
+        {
+          "w": "zamanınla",
+          "start": 1.56,
+          "end": 2.06
+        },
+        {
+          "w": "ne",
+          "start": 2.1,
+          "end": 2.29
+        },
+        {
+          "w": "yapardın",
+          "start": 2.33,
+          "end": 2.79,
+          "emph": true
+        }
+      ]
+    }
+  ]
+}

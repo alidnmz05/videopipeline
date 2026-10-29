@@ -1,9 +1,4 @@
-export type Format = 'vertical' | 'horizontal';
-
-export const CANVAS: Record<Format, {w: number; h: number}> = {
-  vertical: {w: 1080, h: 1920},
-  horizontal: {w: 1920, h: 1080},
-};
+import type {Format} from './lib/project';
 
 const LAYOUT: Record<Format, string> = {
   vertical: `Canvas 1080x1920 (9:16, for TikTok / Reels / Shorts). Origin top-left; (x, y) is the element's anchor.

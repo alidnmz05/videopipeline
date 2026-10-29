@@ -1,0 +1,809 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "s1",
+      "duration": 3.28,
+      "background": "bedroom",
+      "transition": "zoom",
+      "punches": [
+        1.3
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": true,
+          "color": "#8a6cff",
+          "gesture": "shrug",
+          "gestureAt": 1.8
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.25,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "02:00",
+          "color": "#ffffff",
+          "size": 130
+        },
+        {
+          "x": 880,
+          "y": 560,
+          "scale": 0.6,
+          "at": 0.57,
+          "enter": "drop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "moon"
+        },
+        {
+          "x": 790,
+          "y": 900,
+          "scale": 1.1,
+          "at": 1.3,
+          "enter": "pop",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "phone"
+        }
+      ],
+      "words": [
+        {
+          "w": "Gece",
+          "start": 0.25,
+          "end": 0.53
+        },
+        {
+          "w": "yarısı",
+          "start": 0.57,
+          "end": 0.94
+        },
+        {
+          "w": "hâlâ",
+          "start": 0.98,
+          "end": 1.26
+        },
+        {
+          "w": "telefona",
+          "start": 1.3,
+          "end": 1.76,
+          "emph": true
+        },
+        {
+          "w": "mı",
+          "start": 1.8,
+          "end": 1.99
+        },
+        {
+          "w": "bakıyorsun",
+          "start": 2.03,
+          "end": 2.58
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "duration": 1.82,
+      "background": "studio",
+      "transition": "slide",
+      "punches": [
+        0.66
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 880,
+          "scale": 1.1,
+          "at": 0.25,
+          "enter": "drop",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "wave",
+          "gestureAt": 0.66
+        },
+        {
+          "x": 210,
+          "y": 900,
+          "scale": 1,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": false,
+          "color": "#ff8a5c",
+          "gesture": "wave",
+          "gestureAt": 0.66
+        },
+        {
+          "x": 870,
+          "y": 900,
+          "scale": 1,
+          "at": 0.66,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": false,
+          "color": "#8a6cff",
+          "gesture": "wave",
+          "gestureAt": 0.66
+        }
+      ],
+      "words": [
+        {
+          "w": "Yalnız",
+          "start": 0.25,
+          "end": 0.62
+        },
+        {
+          "w": "değilsin",
+          "start": 0.66,
+          "end": 1.12,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "duration": 3.37,
+      "background": "night",
+      "transition": "whip",
+      "punches": [
+        1.44
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 820,
+          "scale": 1.4,
+          "at": 0.25,
+          "exitAt": 0.98,
+          "enter": "pop",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "phone"
+        },
+        {
+          "x": 540,
+          "y": 820,
+          "scale": 1.5,
+          "at": 0.98,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "brain"
+        },
+        {
+          "x": 850,
+          "y": 560,
+          "scale": 0.9,
+          "at": 0.62,
+          "enter": "pop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "bulb"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.8,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "SABAH OLDU!",
+          "color": "#ffe14a"
+        }
+      ],
+      "words": [
+        {
+          "w": "Ekran",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "ışığı",
+          "start": 0.62,
+          "end": 0.94
+        },
+        {
+          "w": "beynine",
+          "start": 0.98,
+          "end": 1.4
+        },
+        {
+          "w": "sabah",
+          "start": 1.44,
+          "end": 1.76,
+          "emph": true
+        },
+        {
+          "w": "olduğunu",
+          "start": 1.8,
+          "end": 2.26
+        },
+        {
+          "w": "söyler",
+          "start": 2.3,
+          "end": 2.67
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "duration": 3.19,
+      "background": "bedroom",
+      "transition": "slide",
+      "punches": [
+        1.67
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": true,
+          "color": "#8a6cff",
+          "gesture": "shrug",
+          "gestureAt": 1.67
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.21,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "MELATONİN",
+          "color": "#ffffff"
+        },
+        {
+          "x": 790,
+          "y": 720,
+          "scale": 1,
+          "at": 0.89,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "clock"
+        },
+        {
+          "x": 800,
+          "y": 1060,
+          "scale": 0.8,
+          "at": 1.67,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "warning"
+        }
+      ],
+      "words": [
+        {
+          "w": "Bu",
+          "start": 0.25,
+          "end": 0.44
+        },
+        {
+          "w": "yüzden",
+          "start": 0.48,
+          "end": 0.85
+        },
+        {
+          "w": "uyku",
+          "start": 0.89,
+          "end": 1.17
+        },
+        {
+          "w": "hormonu",
+          "start": 1.21,
+          "end": 1.63
+        },
+        {
+          "w": "geç",
+          "start": 1.67,
+          "end": 1.9,
+          "emph": true
+        },
+        {
+          "w": "salgılanır",
+          "start": 1.94,
+          "end": 2.49
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "duration": 3.81,
+      "background": "office",
+      "transition": "whip",
+      "punches": [
+        0.77,
+        2.06
+      ],
+      "elements": [
+        {
+          "x": 780,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "sad",
+          "talking": true,
+          "color": "#ff8a5c",
+          "gesture": "facepalm",
+          "gestureAt": 0.77
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.77,
+          "exitAt": 2.06,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "YORGUN"
+        },
+        {
+          "x": 300,
+          "y": 700,
+          "scale": 1.3,
+          "at": 0.77,
+          "exitAt": 1.46,
+          "enter": "pop",
+          "loop": "float",
+          "type": "prop",
+          "asset": "zzz"
+        },
+        {
+          "x": 300,
+          "y": 720,
+          "scale": 0.9,
+          "at": 1.46,
+          "exitAt": 2.06,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "clock"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 2.06,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "DAĞINIK"
+        },
+        {
+          "x": 300,
+          "y": 760,
+          "scale": 1,
+          "at": 2.06,
+          "enter": "pop",
+          "loop": "wiggle",
+          "type": "prop",
+          "asset": "brain"
+        }
+      ],
+      "words": [
+        {
+          "w": "Sonuç",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "yorgun",
+          "start": 0.77,
+          "end": 1.15,
+          "emph": true
+        },
+        {
+          "w": "bir",
+          "start": 1.18,
+          "end": 1.42
+        },
+        {
+          "w": "sabah",
+          "start": 1.46,
+          "end": 1.79
+        },
+        {
+          "w": "ve",
+          "start": 1.83,
+          "end": 2.02
+        },
+        {
+          "w": "dağınık",
+          "start": 2.06,
+          "end": 2.47,
+          "emph": true
+        },
+        {
+          "w": "bir",
+          "start": 2.51,
+          "end": 2.75
+        },
+        {
+          "w": "zihin",
+          "start": 2.79,
+          "end": 3.11
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "duration": 1.83,
+      "background": "studio",
+      "transition": "zoom",
+      "punches": [
+        0.57
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 900,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideUp",
+          "loop": "none",
+          "type": "character",
+          "mood": "surprised",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "shrug",
+          "gestureAt": 0.94
+        },
+        {
+          "x": 540,
+          "y": 520,
+          "scale": 1.2,
+          "at": 0.57,
+          "enter": "drop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "bulb"
+        }
+      ],
+      "words": [
+        {
+          "w": "Peki",
+          "start": 0.25,
+          "end": 0.53
+        },
+        {
+          "w": "çözüm",
+          "start": 0.57,
+          "end": 0.9,
+          "emph": true
+        },
+        {
+          "w": "ne",
+          "start": 0.94,
+          "end": 1.13
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "duration": 3.1,
+      "background": "bedroom",
+      "transition": "slide",
+      "punches": [
+        1.02,
+        2.08
+      ],
+      "elements": [
+        {
+          "x": 300,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideLeft",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "point",
+          "gestureAt": 1.67
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.75,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "1 SAAT KURALI",
+          "color": "#ffffff",
+          "size": 84
+        },
+        {
+          "x": 790,
+          "y": 760,
+          "scale": 1,
+          "at": 1.02,
+          "exitAt": 1.67,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "clock"
+        },
+        {
+          "x": 790,
+          "y": 780,
+          "scale": 1.1,
+          "at": 1.67,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "phone"
+        },
+        {
+          "x": 850,
+          "y": 640,
+          "scale": 0.6,
+          "at": 2.08,
+          "enter": "pop",
+          "loop": "none",
+          "type": "prop",
+          "asset": "cross"
+        }
+      ],
+      "words": [
+        {
+          "w": "Yatmadan",
+          "start": 0.25,
+          "end": 0.71
+        },
+        {
+          "w": "bir",
+          "start": 0.75,
+          "end": 0.99
+        },
+        {
+          "w": "saat",
+          "start": 1.02,
+          "end": 1.31,
+          "emph": true
+        },
+        {
+          "w": "önce",
+          "start": 1.35,
+          "end": 1.63
+        },
+        {
+          "w": "ekranı",
+          "start": 1.67,
+          "end": 2.04
+        },
+        {
+          "w": "bırak",
+          "start": 2.08,
+          "end": 2.4,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "duration": 3.87,
+      "background": "sky",
+      "transition": "whip",
+      "punches": [
+        1.43,
+        2.85
+      ],
+      "elements": [
+        {
+          "x": 780,
+          "y": 860,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideRight",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "cheer",
+          "gestureAt": 2.85
+        },
+        {
+          "x": 300,
+          "y": 720,
+          "scale": 0.95,
+          "at": 0.66,
+          "enter": "draw",
+          "loop": "none",
+          "type": "prop",
+          "asset": "chart"
+        },
+        {
+          "x": 300,
+          "y": 1040,
+          "scale": 0.7,
+          "at": 2.85,
+          "enter": "drop",
+          "loop": "bounce",
+          "type": "prop",
+          "asset": "arrowUp"
+        }
+      ],
+      "words": [
+        {
+          "w": "Birkaç",
+          "start": 0.25,
+          "end": 0.62
+        },
+        {
+          "w": "hafta",
+          "start": 0.66,
+          "end": 0.98
+        },
+        {
+          "w": "içinde",
+          "start": 1.02,
+          "end": 1.4
+        },
+        {
+          "w": "enerjin",
+          "start": 1.43,
+          "end": 1.85,
+          "emph": true
+        },
+        {
+          "w": "belirgin",
+          "start": 1.89,
+          "end": 2.35
+        },
+        {
+          "w": "şekilde",
+          "start": 2.39,
+          "end": 2.81
+        },
+        {
+          "w": "artar",
+          "start": 2.85,
+          "end": 3.17,
+          "emph": true
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "duration": 3.67,
+      "background": "studio",
+      "transition": "zoom",
+      "punches": [
+        1.59,
+        2.23
+      ],
+      "elements": [
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 0.25,
+          "exitAt": 1.59,
+          "enter": "fadeUp",
+          "loop": "none",
+          "type": "text",
+          "text": "KÜÇÜK ADIM"
+        },
+        {
+          "x": 540,
+          "y": 380,
+          "scale": 1,
+          "at": 1.59,
+          "enter": "pop",
+          "loop": "none",
+          "type": "text",
+          "text": "BÜYÜK FARK",
+          "size": 110
+        },
+        {
+          "x": 540,
+          "y": 900,
+          "scale": 1.5,
+          "at": 0.25,
+          "enter": "slideUp",
+          "loop": "none",
+          "type": "character",
+          "mood": "happy",
+          "talking": true,
+          "color": "#5c9bff",
+          "gesture": "cheer",
+          "gestureAt": 1.59
+        },
+        {
+          "x": 220,
+          "y": 640,
+          "scale": 0.8,
+          "at": 2.23,
+          "enter": "draw",
+          "loop": "none",
+          "type": "prop",
+          "asset": "check"
+        },
+        {
+          "x": 860,
+          "y": 640,
+          "scale": 0.8,
+          "at": 2.23,
+          "enter": "pop",
+          "loop": "pulse",
+          "type": "prop",
+          "asset": "heart"
+        }
+      ],
+      "words": [
+        {
+          "w": "Küçük",
+          "start": 0.25,
+          "end": 0.57
+        },
+        {
+          "w": "bir",
+          "start": 0.62,
+          "end": 0.85
+        },
+        {
+          "w": "değişiklik",
+          "start": 0.89,
+          "end": 1.44
+        },
+        {
+          "w": "büyük",
+          "start": 1.59,
+          "end": 1.91,
+          "emph": true
+        },
+        {
+          "w": "bir",
+          "start": 1.95,
+          "end": 2.19
+        },
+        {
+          "w": "fark",
+          "start": 2.23,
+          "end": 2.51,
+          "emph": true
+        },
+        {
+          "w": "yaratır",
+          "start": 2.55,
+          "end": 2.97
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type {StoryPlan} from './schema';
-import {CANVAS, type Format} from './prompt';
+import {CANVAS, type Format} from './lib/project';
 import type {Gesture, Transition} from '../src/catalog';
 
 type PlanScene = StoryPlan['scenes'][number];

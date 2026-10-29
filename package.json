@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts Story out/story.mp4",
-    "still": "remotion still src/index.ts Story out/frame.png --frame=60",
-    "scenes": "tsx scripts/generate-scenes.ts",
-    "scenes:mock": "tsx scripts/generate-scenes.ts --mock"
+    "new": "tsx scripts/new-project.ts",
+    "plan": "tsx scripts/plan.ts",
+    "build": "tsx scripts/build.ts",
+    "render": "tsx scripts/render.ts",
+    "index": "tsx scripts/index-projects.ts",
+    "studio": "tsx scripts/index-projects.ts && remotion studio src/index.ts",
+    "typecheck": "tsx scripts/index-projects.ts && tsc"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",

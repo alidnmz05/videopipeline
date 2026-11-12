@@ -28,5 +28,9 @@ export const catalog: PackCatalog = {
     cross: "wrong, stop, don't",
     heart: 'health, love',
     brain: 'mind, focus, thinking',
+    document: 'a contract, a signed paper, a commitment; use enter=draw to sign it',
+    gavel: 'court, judge, lawsuit; the gavel keeps striking',
+    house: 'a home, a rented flat, property',
+    calendar: 'dates, deadlines, a term or year passing; pages flip',
   },
 };

@@ -9,19 +9,24 @@
     "render": "tsx scripts/render.ts",
     "index": "tsx scripts/index-projects.ts",
     "studio": "tsx scripts/index-projects.ts && remotion studio src/index.ts",
-    "typecheck": "tsx scripts/index-projects.ts && tsc"
+    "typecheck": "tsx scripts/index-projects.ts && tsc",
+    "models": "tsx scripts/fetch-models.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
+    "@react-three/fiber": "8.18.0",
     "@remotion/cli": "4.0.539",
+    "@remotion/three": "4.0.539",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remotion": "4.0.539",
+    "three": "0.169.0",
     "tsx": "^4.23.15",
     "zod": "4.5.4"
   },
   "devDependencies": {
     "@types/react": "18.3.3",
+    "@types/three": "0.169.0",
     "typescript": "5.5.4"
   }
 }

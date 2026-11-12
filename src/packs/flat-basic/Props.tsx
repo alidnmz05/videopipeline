@@ -145,6 +145,59 @@ export const Prop: React.FC<{asset: string; draw: number; t: number}> = ({asset,
           <rect x={-22} y={-20} width={44} height={30} rx={6} fill="#ffcf3f" stroke={INK} strokeWidth={5} />
         </g>
       );
+    case 'document': {
+      // A signed sheet; with enter=draw the signature is written in.
+      const len = 260;
+      return (
+        <g>
+          <path d="M-95 -130 L60 -130 L95 -95 L95 130 L-95 130Z" fill="#fff" stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+          <path d="M60 -130 L60 -95 L95 -95" fill="#e6e6ef" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+          {[-80, -50, -20, 10, 40].map((y, i) => (
+            <line key={y} x1={-65} x2={i === 4 ? 10 : 65} y1={y} y2={y} stroke="#b9bccc" strokeWidth={9} strokeLinecap="round" />
+          ))}
+          <path d="M-60 95 C-40 60 -25 120 -5 85 S30 70 40 95 S70 90 75 80" fill="none" stroke="#2b5fd9" strokeWidth={7} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - draw)} />
+        </g>
+      );
+    }
+    case 'gavel': {
+      const swing = -30 + 30 * Math.abs(Math.sin(t * 4));
+      return (
+        <g>
+          <rect x={-110} y={70} width={150} height={34} rx={10} fill="#7a4a24" stroke={INK} strokeWidth={6} />
+          <g transform={`translate(60 60) rotate(${swing}) translate(-60 -60)`}>
+            <rect x={-40} y={-35} width={160} height={22} rx={10} fill="#a0612f" stroke={INK} strokeWidth={6} transform="rotate(-35 -40 -24)" />
+            <rect x={-110} y={-85} width={110} height={60} rx={14} fill="#a0612f" stroke={INK} strokeWidth={7} transform="rotate(-35 -55 -55)" />
+          </g>
+        </g>
+      );
+    }
+    case 'house':
+      return (
+        <g>
+          <path d="M-130 -10 L0 -125 L130 -10Z" fill="#e2574c" stroke={INK} strokeWidth={8} strokeLinejoin="round" />
+          <rect x={-105} y={-12} width={210} height={140} fill="#fff3d6" stroke={INK} strokeWidth={8} />
+          <rect x={-25} y={45} width={50} height={83} rx={6} fill="#a0612f" stroke={INK} strokeWidth={6} />
+          <rect x={-85} y={18} width={45} height={40} rx={4} fill="#bfe3f2" stroke={INK} strokeWidth={6} />
+          <rect x={40} y={18} width={45} height={40} rx={4} fill="#bfe3f2" stroke={INK} strokeWidth={6} />
+        </g>
+      );
+    case 'calendar': {
+      // The page flips every second: a time-passing cue.
+      const flip = (t % 1) < 0.15 ? Math.sin(((t % 1) / 0.15) * Math.PI) : 0;
+      return (
+        <g>
+          <rect x={-100} y={-90} width={200} height={190} rx={18} fill="#fff" stroke={INK} strokeWidth={8} />
+          <rect x={-100} y={-90} width={200} height={55} rx={18} fill="#ff5252" stroke={INK} strokeWidth={8} />
+          {[-55, 55].map((x) => (
+            <rect key={x} x={x - 8} y={-112} width={16} height={40} rx={8} fill={INK} />
+          ))}
+          {[0, 1, 2].map((r) =>
+            [0, 1, 2, 3].map((c) => <rect key={`${r}${c}`} x={-75 + c * 40} y={-15 + r * 35} width={28} height={22} rx={4} fill="#d7d9e6" />),
+          )}
+          <rect x={-100} y={-35} width={200} height={135} fill="#fff" opacity={flip * 0.9} transform={`scale(1 ${1 - flip * 0.6})`} />
+        </g>
+      );
+    }
     default:
       return null;
   }

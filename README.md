@@ -31,3 +31,20 @@ rerun `build` after an edit.
 Copy `src/packs/flat-basic/`, redraw the components, keep the character anchored at the head
 center with feet ~340px below at scale 1, then register it in `src/packs/catalogs.ts` and
 `src/packs/registry.ts`. Mood and gesture names are engine-wide and every pack must support them.
+
+## 3D experiments (`src/experiments/`)
+
+Hybrid 3D tests built with three.js through `@remotion/three` and `@react-three/fiber`, reusing the
+engine's captions and word timing:
+
+- `deneme-3d`: the CC0 RobotExpressive model over a 2D background.
+- `kira-3d`: a 60-second tenant-rights explainer with 3D people over 2D backgrounds.
+- `kira-sahne`: the opening lines played inside a 3D living room (`kira-3d/sets/Apartment.tsx`).
+
+The people are one Ready Player Me avatar cloned per character, animated with Mixamo (Xbot) clips
+baked onto it by `kira-3d/retarget.ts`. Those two models are not in the repository; fetch them
+with `npm run models` and check their licences before publishing anything made with them.
+
+```
+npx remotion render src/index.ts kira-sahne out/kira-sahne.mp4
+```

@@ -3,3 +3,6 @@ out/
 # Rendered videos are build artifacts; the plan and story JSON are the source of truth.
 *.mp4
 src/projects.generated.ts
+# Third-party 3D models with licence terms that are unclear for redistribution; fetch locally with `npm run models`.
+public/models/rpm-avatar/
+public/models/xbot/
